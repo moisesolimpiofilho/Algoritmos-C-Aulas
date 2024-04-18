@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 /**
- * Escreva um algoritmo que crie uma matriz de 3x3 com números fixos
+ * Escreva um algoritmo que crie uma matriz de 3x3 com números decimais, 
+ * sendo que estes números devem ser digitados pelo usuário
 */
 
 int main()
