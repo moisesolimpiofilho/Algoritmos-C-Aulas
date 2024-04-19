@@ -20,6 +20,7 @@ int main()
     bool houveGanhador = false;
     int pe = 0;              // posicaoEscolhida 0 ate 8
     char jogadorAtual = '1'; // 1 ou 2
+    int qtdeJogadasDisponiveis = 9; // Controlar caso seja empate
 
     printf("---Jogo da velha---\n");
 
@@ -118,9 +119,6 @@ int main()
             houveGanhador = true;
         }
 
-        // Verifica empate
-        
-
         // Verifica se houve jogador
         if (houveGanhador == false)
         {
@@ -133,11 +131,19 @@ int main()
             {
                 jogadorAtual = '1';
             }
+            qtdeJogadasDisponiveis--;
         }
 
-    } while (houveGanhador == false);
+    } while (houveGanhador == false && qtdeJogadasDisponiveis > 0);
 
-    printf("---Parabens Jogador %c\n", jogadorAtual);
+    if (qtdeJogadasDisponiveis == 0) 
+    {
+        printf("Deu velha :) \n");
+    }
+    else 
+    {
+        printf("---Parabens Jogador %c\n", jogadorAtual);
+    }    
 
     return 0;
 }
